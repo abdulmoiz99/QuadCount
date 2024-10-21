@@ -1,0 +1,17 @@
+POST http://localhost:8080/groups
+Content-Type: application/json
+
+{
+  "name" : "Test Group 1"
+}
+
+######################
+
+GET http://localhost:8080/groups
+content-type: application/json
+
+
+######################
+
+DELETE http://localhost:8080/groups/1
+content-type: application/json
