@@ -34,7 +34,7 @@ public class SpringSecurityCustomDaoProvider {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         // Allow the login endpoint without authentication
-                        .requestMatchers("/auth/login").permitAll()
+                        .requestMatchers("/auth/**").permitAll()
                         // Any other request should be authenticated
                         .anyRequest().authenticated()
                 )

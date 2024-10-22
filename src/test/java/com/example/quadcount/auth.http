@@ -5,3 +5,14 @@ Content-Type: application/json
   "email": "sai@gmail.com",
   "password": 1234
 }
+###
+
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Pengleng",
+  "lastName": "Hok",
+  "email": "pengleng@gmail.com",
+  "password": "12345"
+}
