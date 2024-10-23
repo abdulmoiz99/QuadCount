@@ -1,8 +1,9 @@
 POST http://localhost:8080/groups
 Content-Type: application/json
 
- {
-  "name" : "Test Group 1"
+{
+  "groupName": "Test Group 1",
+  "userId": [1, 2, 3]
 }
 
 ######################
