@@ -1,15 +1,15 @@
-package com.example.quadcount.controllers;
+package com.example.quadcount.controller;
 
 import com.example.quadcount.dto.NewGroupDTO;
 import com.example.quadcount.model.Groups;
-import com.example.quadcount.model.Users;
+import com.example.quadcount.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.quadcount.repository.groupRepository;
-import com.example.quadcount.repository.userRepository;
+import com.example.quadcount.repository.GroupRepository;
+import com.example.quadcount.repository.UserRepository;
 
 import java.util.List;
 
@@ -17,20 +17,22 @@ import java.util.List;
 @RestController
 @RequestMapping("/groups")
 @CrossOrigin(origins = "http://localhost:5173")
-public class groupsController {
+public class GroupsController {
 
     @Autowired
-    private  groupRepository groupRepository;
+    private GroupRepository groupRepository;
 
     @Autowired
-    private  userRepository userRepository;
+    private  UserRepository userRepository;
 
     @PostMapping
     public ResponseEntity<String> newGroup(@RequestBody NewGroupDTO newGroup) {
         Groups group = new Groups();
         group.setName(newGroup.getGroupName());
 
-        List<Users> users = userRepository.findAllById(newGroup.getUserId()).stream().toList();
+        //List<User> users = userRepository.findAllById(newGroup.getUserId()).stream().toList();
+
+       List<User> users =   userRepository.findAllById(newGroup.getUserId()).stream().toList();
 
         group.setUsers(users);
 

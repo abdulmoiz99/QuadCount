@@ -7,5 +7,5 @@ import java.util.List;
 @Data
 public class NewGroupDTO {
     private String groupName;
-    private List<Integer> userId;
+    private List<Long> userId;
 }

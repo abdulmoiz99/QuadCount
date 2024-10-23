@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface groupRepository extends JpaRepository<Groups,Integer > {
+public interface GroupRepository extends JpaRepository<Groups,Integer > {
     List<Groups> findAll();
 }

@@ -20,5 +20,5 @@ public class Groups {
             joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
-    private List<Users> users;
+    private List<User> users;
 }
